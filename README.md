@@ -1,5 +1,7 @@
 # Electrical Distribution Board Specification
 
+**English** | [**Read in Georgian (ქართულად)**](README.ge.md)
+
 A complete guide for building a modern, safe electrical distribution panel for a residential property with 17 individual circuits. This design uses high-quality Schneider Electric components with individual RCBO protection for each circuit.
 
 ## What is This System?
