@@ -2,7 +2,7 @@
 
 **English** | [**Read in Georgian (ქართულად)**](README.ge.md)
 
-A complete guide for building a modern, safe electrical distribution panel for a residential property with 17 individual circuits. This design uses high-quality Schneider Electric components with individual RCBO protection for each circuit.
+A complete guide for building a modern, safe electrical distribution panel for a residential property with 16 individual circuits. This design uses high-quality Hager components with individual RCBO protection for each circuit.
 
 ## What is This System?
 
@@ -21,13 +21,13 @@ This electrical panel design provides:
 |-----------|-------------|-------|-------|-------------|
 | **Voltage Monitor** | E1YM400VS10 | TELE | E1YM | Monitors incoming voltage (160-280V range); triggers contactor during under/overvoltage conditions |
 | **Main Contactor** | LC1D40A | Schneider Electric | TeSys D | 40A contactor with 230V AC coil; acts as main disconnect controlled by voltage monitor |
-| **Main Circuit Breaker** | A9F74163 | Schneider Electric | Acti9 iC60N | 1P+N 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
-| **Main RCD** | A9R44263 | Schneider Electric | Acti9 iID | 2P 63A 300mA Type AC; time-delayed RCD for fire protection; detects ground faults |
-| **Surge Protection** | A9L08501 | Schneider Electric | Acti9 iPRD 8r | 1P+N 8kA 350V Type 2 surge protector; protects against lightning and voltage spikes with remote signaling |
-| **RCBOs - C10** | A9D32610 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 10A C-curve Type A 30mA; for refrigerators (1× unit) |
-| **RCBOs - C16** | A9D32616 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 16A C-curve Type A 30mA; for rooms, bathrooms, ACs, laundry (11× units) |
-| **RCBOs - C25** | A9D32625 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 25A C-curve Type A 30mA; for oven, welder (2× units) |
-| **RCBOs - C32** | A9D32632 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 32A C-curve Type A 30mA; for EV charger (1× unit) |
+| **Main Circuit Breaker** | MCN163 | Hager | MCN | 1P 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
+| **Main RCD** | CFC263U | Hager | CFC | 2P 63A 300mA Type AC; time-delayed RCD for fire protection; detects ground faults |
+| **Surge Protection** | SPL220 | Hager | SPL | 1P+N 20kA Type 2 surge protector; protects against lightning and voltage spikes |
+| **RCBOs - C10** | ADC910R | Hager | ADC | 1P+N 10A C-curve Type A 30mA 6kA; for refrigerators (1× unit) |
+| **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, ACs, laundry (11× units) |
+| **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder (2× units) |
+| **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger (1× unit) |
 
 <table>
 <tr>
@@ -55,17 +55,17 @@ Controlled by voltage monitor
 <tr>
 <td width="50%" align="center">
 
-**Main Circuit Breaker**<br/>Schneider iC60N 1P+N
+**Main Circuit Breaker**<br/>Hager MCN 1P
 
 <img src="imgs/breaker-ic60n.jpg" width="200"/>
 
 Overcurrent & short circuit protection<br/>
-C40/C50/C63 (choose based on contract)
+C63 6kA
 
 </td>
 <td width="50%" align="center">
 
-**Main RCD (Fire Protection)**<br/>Schneider iID 2P 63A/300mA
+**Main RCD (Fire Protection)**<br/>Hager CFC 2P 63A/300mA
 
 <img src="imgs/rcd-iid.jpg" width="200"/>
 
@@ -77,7 +77,7 @@ Time-delayed, prevents fires
 <tr>
 <td width="50%" align="center">
 
-**Surge Protector**<br/>Schneider iPRD 8r 1P+N
+**Surge Protector**<br/>Hager SPL 1P+N Type 2
 
 <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/>
 
@@ -87,7 +87,7 @@ Saves appliances during storms
 </td>
 <td width="50%" align="center">
 
-**RCBO (Individual Circuits)**<br/>Schneider iDPN Vigi Type A
+**RCBO (Individual Circuits)**<br/>Hager ADC Type A
 
 <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/>
 
@@ -123,7 +123,7 @@ Each circuit gets its own RCBO that provides:
 
 ## All 16 Circuits - What Gets Protected
 
-Every circuit uses **Schneider Acti9 iDPN Vigi** RCBOs with these specifications:
+Every circuit uses **Hager ADC** RCBOs with these specifications:
 - **Type A** - suitable for modern electronics, computers, LED lights
 - **30mA sensitivity** - trips in 0.03 seconds if current leaks (very safe)
 - **1P+N** - single phase + neutral (standard residential)
@@ -178,17 +178,17 @@ Every circuit uses **Schneider Acti9 iDPN Vigi** RCBOs with these specifications
 |-----|-------------|-------------|---------------------|
 | 1 | TELE E1YM400VS10 | Voltage monitor relay | ₾200-300 (€80-120) |
 | 1 | Schneider LC1D40A | Contactor 40A + coil (230V AC) | ₾100-150 (€40-60) |
-| 1 | Schneider iC60N 1P+N C40 | Main breaker 1P+N (choose C40, C50, or C63) | ₾80-120 (€30-45) |
-| 1 | Schneider iID 2P 63A 300mA Type AC | Main RCD 2-pole (time-delayed) | ₾200-300 (€80-120) |
-| 1 | Schneider iPRD 8r 1P+N | Surge protection device (single-phase) | ₾150-250 (€60-100) |
+| 1 | Hager MCN163 | Main breaker 1P C63 6kA | ₾70-100 (€30-40) |
+| 1 | Hager CFC263U | Main RCD 2P 63A 300mA Type AC | ₾180-250 (€70-100) |
+| 1 | Hager SPL220 | Surge protection device Type 2 1P+N 20kA | ₾120-200 (€50-80) |
 
 ### Individual Circuit Protection (16 RCBOs)
 | Qty | Part Number | For Which Circuits | Approx. Price Each |
 |-----|-------------|--------------------|--------------------|
-| 11 | Schneider iDPN Vigi Type A C16 30mA (A9D32616) | Rooms, bathrooms, ACs, dishwasher, laundry | ₾120-160 (€45-65) |
-| 1 | Schneider iDPN Vigi Type A C10 30mA (A9D32610) | Refrigerators only | ₾120-160 (€45-65) |
-| 2 | Schneider iDPN Vigi Type A C25 30mA (A9D32625) | Electric oven, welder | ₾120-160 (€45-65) |
-| 1 | Schneider iDPN Vigi Type A C32 30mA (A9D32632) | EV charger only | ₾120-160 (€45-65) |
+| 11 | Hager ADC916R | Rooms, bathrooms, ACs, dishwasher, laundry (C16 Type A 30mA) | ₾100-140 (€40-55) |
+| 1 | Hager ADC910R | Refrigerators only (C10 Type A 30mA) | ₾100-140 (€40-55) |
+| 2 | Hager ADC925R | Electric oven, welder (C25 Type A 30mA) | ₾100-140 (€40-55) |
+| 1 | Hager ADC932R | EV charger only (C32 Type A 30mA) | ₾100-140 (€40-55) |
 
 ### Additional Materials Needed
 - Distribution board enclosure (min. 28 modules wide)
@@ -197,7 +197,7 @@ Every circuit uses **Schneider Acti9 iDPN Vigi** RCBOs with these specifications
 - Circuit labels and marker
 - Din rail clips and cable ties
 
-**Estimated Total Cost: ₾3,000 - ₾4,500 (€1,200 - €1,800)** (parts only, excluding labor)
+**Estimated Total Cost: ₾2,800 - ₾4,200 (€1,100 - €1,700)** (parts only, excluding labor)
 
 ## Critical Installation Instructions
 
