@@ -26,7 +26,7 @@ This electrical panel design provides:
 | **Surge Protection** | A9L08501 | Schneider Electric | Acti9 iPRD 8r | 1P+N 8kA 350V Type 2 surge protector; protects against lightning and voltage spikes with remote signaling |
 | **RCBOs - C10** | A9D32610 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 10A C-curve Type A 30mA; for refrigerators (1× unit) |
 | **RCBOs - C16** | A9D32616 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 16A C-curve Type A 30mA; for rooms, bathrooms, ACs, laundry (11× units) |
-| **RCBOs - C25** | A9D32625 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 25A C-curve Type A 30mA; for garage, oven, welder (3× units) |
+| **RCBOs - C25** | A9D32625 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 25A C-curve Type A 30mA; for oven, welder (2× units) |
 | **RCBOs - C32** | A9D32632 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 32A C-curve Type A 30mA; for EV charger (1× unit) |
 
 <table>
@@ -91,7 +91,7 @@ Saves appliances during storms
 
 <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/>
 
-17× individual protection circuits<br/>
+16× individual protection circuits<br/>
 C10/C16/C25/C32, 30mA per circuit
 
 </td>
@@ -121,7 +121,7 @@ Each circuit gets its own RCBO that provides:
 - Better safety than shared protection
 - Easier troubleshooting (you know exactly which circuit failed)
 
-## All 17 Circuits - What Gets Protected
+## All 16 Circuits - What Gets Protected
 
 Every circuit uses **Schneider Acti9 iDPN Vigi** RCBOs with these specifications:
 - **Type A** - suitable for modern electronics, computers, LED lights
@@ -131,46 +131,45 @@ Every circuit uses **Schneider Acti9 iDPN Vigi** RCBOs with these specifications
 
 ## Complete Circuit List
 
-### 1-5: Living Spaces (All Rooms)
+### 1-4: Living Spaces (All Rooms)
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
 | 1 | Room 1 - all outlets & lights | C16 | 3,680W | Computers, TV, lamps, phone chargers |
 | 2 | Room 2 - all outlets & lights | C16 | 3,680W | Same as above |
 | 3 | Room 3 - all outlets & lights | C16 | 3,680W | Same as above |
-| 4 | Garage - outlets & lights | C25 | 5,750W | Light-duty power tools, compressor, lighting |
-| 5 | Studio - all outlets & lights | C16 | 3,680W | Workspace equipment, lighting |
+| 4 | Studio - all outlets & lights | C16 | 3,680W | Workspace equipment, lighting |
 
-### 6-7: Bathrooms
+### 5-6: Bathrooms
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 6 | Bathroom 1 - lights, outlets, fan | C16 | 3,680W | Hair dryer, electric razor, etc. |
-| 7 | Bathroom 2 - lights, outlets, fan | C16 | 3,680W | Same as above |
+| 5 | Bathroom 1 - lights, outlets, fan | C16 | 3,680W | Hair dryer, electric razor, etc. |
+| 6 | Bathroom 2 - lights, outlets, fan | C16 | 3,680W | Same as above |
 
-### 8-11: Air Conditioning (One AC Per Room)
+### 7-10: Air Conditioning (One AC Per Room)
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 8 | Room 1 AC unit | C16 | 3,680W | Handles startup surge |
-| 9 | Room 2 AC unit | C16 | 3,680W | Separate circuit = no interference |
-| 10 | Room 3 AC unit | C16 | 3,680W | Each AC isolated for reliability |
-| 11 | Studio AC unit | C16 | 3,680W | Studio stays cool independently |
+| 7 | Room 1 AC unit | C16 | 3,680W | Handles startup surge |
+| 8 | Room 2 AC unit | C16 | 3,680W | Separate circuit = no interference |
+| 9 | Room 3 AC unit | C16 | 3,680W | Each AC isolated for reliability |
+| 10 | Studio AC unit | C16 | 3,680W | Studio stays cool independently |
 
-### 12-14: Kitchen Appliances
+### 11-13: Kitchen Appliances
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 12 | Refrigerators (main + wine fridge) | C10 | 2,300W | Smaller breaker = less nuisance tripping |
-| 13 | Electric oven | C25 | 5,750W | Heavy-duty circuit for high power |
-| 14 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
+| 11 | Refrigerators (main + wine fridge) | C10 | 2,300W | Smaller breaker = less nuisance tripping |
+| 12 | Electric oven | C25 | 5,750W | Heavy-duty circuit for high power |
+| 13 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
 
-### 15: Laundry Room
+### 14: Laundry Room
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 15 | Washing machine & Clothes dryer | C16 | 3,680W | Combined circuit for both appliances |
+| 14 | Washing machine & Clothes dryer | C16 | 3,680W | Combined circuit for both appliances |
 
-### 16-17: Garage Heavy Equipment
+### 15-16: Heavy Equipment
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 16 | EV Charger (Level 2) | C32 | 7,360W | 32A dedicated circuit for electric vehicle charging |
-| 17 | MIG Welder (IPOTOOLS MIG 225SYN) | C25 | 5,750W | 225A welding machine, requires dedicated circuit |
+| 15 | EV Charger (Level 2) | C32 | 7,360W | 32A dedicated circuit for electric vehicle charging |
+| 16 | MIG Welder (IPOTOOLS MIG 225SYN) | C25 | 5,750W | 225A welding machine, requires dedicated circuit |
 
 ## Shopping List - What to Buy
 
@@ -183,16 +182,16 @@ Every circuit uses **Schneider Acti9 iDPN Vigi** RCBOs with these specifications
 | 1 | Schneider iID 2P 63A 300mA Type AC | Main RCD 2-pole (time-delayed) | ₾200-300 (€80-120) |
 | 1 | Schneider iPRD 8r 1P+N | Surge protection device (single-phase) | ₾150-250 (€60-100) |
 
-### Individual Circuit Protection (17 RCBOs)
+### Individual Circuit Protection (16 RCBOs)
 | Qty | Part Number | For Which Circuits | Approx. Price Each |
 |-----|-------------|--------------------|--------------------|
 | 11 | Schneider iDPN Vigi Type A C16 30mA (A9D32616) | Rooms, bathrooms, ACs, dishwasher, laundry | ₾120-160 (€45-65) |
 | 1 | Schneider iDPN Vigi Type A C10 30mA (A9D32610) | Refrigerators only | ₾120-160 (€45-65) |
-| 3 | Schneider iDPN Vigi Type A C25 30mA (A9D32625) | Garage, electric oven, welder | ₾120-160 (€45-65) |
+| 2 | Schneider iDPN Vigi Type A C25 30mA (A9D32625) | Electric oven, welder | ₾120-160 (€45-65) |
 | 1 | Schneider iDPN Vigi Type A C32 30mA (A9D32632) | EV charger only | ₾120-160 (€45-65) |
 
 ### Additional Materials Needed
-- Distribution board enclosure (min. 30 modules wide)
+- Distribution board enclosure (min. 28 modules wide)
 - Busbar (single-phase + neutral)
 - Wire: 1.5mm² for C10, 2.5mm² for C16, 4mm² for C25, 6mm² for C32
 - Circuit labels and marker
@@ -241,47 +240,42 @@ Print and attach labels to each RCBO:
 Circuit 1: Room 1 Outlets/Lights
 Circuit 2: Room 2 Outlets/Lights
 Circuit 3: Room 3 Outlets/Lights
-Circuit 4: Garage Outlets/Lights
-Circuit 5: Studio Outlets/Lights
-Circuit 6: Bathroom 1
-Circuit 7: Bathroom 2
-Circuit 8: AC - Room 1
-Circuit 9: AC - Room 2
-Circuit 10: AC - Room 3
-Circuit 11: AC - Studio
-Circuit 12: Refrigerators
-Circuit 13: Electric Oven
-Circuit 14: Dishwasher
-Circuit 15: Washing Machine & Dryer
-Circuit 16: EV Charger (Garage)
-Circuit 17: MIG Welder (Garage)
+Circuit 4: Studio Outlets/Lights
+Circuit 5: Bathroom 1
+Circuit 6: Bathroom 2
+Circuit 7: AC - Room 1
+Circuit 8: AC - Room 2
+Circuit 9: AC - Room 3
+Circuit 10: AC - Studio
+Circuit 11: Refrigerators
+Circuit 12: Electric Oven
+Circuit 13: Dishwasher
+Circuit 14: Washing Machine & Dryer
+Circuit 15: EV Charger
+Circuit 16: MIG Welder
 ```
 
 ## Advanced Options
 
 ### Upgrade to Type F RCBOs (Optional)
 If you have modern inverter-based appliances:
-- **Consider Type F** for circuits 8-11 (AC units), 15 (washing machine & dryer), 16 (EV charger), and 17 (inverter welder)
+- **Consider Type F** for circuits 7-10 (AC units), 14 (washing machine & dryer), 15 (EV charger), and 16 (inverter welder)
 - Type F RCBOs handle DC fault currents better from inverter-based equipment
 - Cost: ~€10-15 more per unit
 - **Highly recommended for EV charger and inverter welder circuits**
 
-### Garage Heavy Equipment Notes
-**EV Charger (Circuit 16):**
+### Heavy Equipment Notes
+**EV Charger (Circuit 15):**
 - 32A dedicated circuit provides ~7.3kW charging (Level 2)
 - Use 6mm² copper wire minimum
 - Consider upgrading to Type F RCBO for better protection
 - Never run EV charger and welder simultaneously at full power
 
-**MIG Welder (Circuit 17):**
+**MIG Welder (Circuit 16):**
 - IPOTOOLS MIG 225SYN: 225A output, ~20A input at 230V
 - Draws 4-5kW at maximum output
 - C25 RCBO provides adequate protection
 - Dedicated circuit prevents voltage drops during welding
-
-**Garage General Circuit (Circuit 4):**
-- C25 rating for light-duty tools, air compressor, lighting
-- Not for simultaneous use with welder or EV charger
 
 ### Why Refrigerators Get C10 Instead of C16
 - Refrigerator compressors cause small current surges
