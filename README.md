@@ -17,6 +17,15 @@ This electrical panel design provides:
 
 ### Main Protection Components (What Comes First)
 
+| Component | Part Number | Brand | Model | Description |
+|-----------|-------------|-------|-------|-------------|
+| **Voltage Monitor** | E1YM400VS10 | TELE | E1YM | Monitors incoming voltage (160-280V range); triggers contactor during under/overvoltage conditions |
+| **Main Contactor** | LC1D40A | Schneider Electric | TeSys D | 40A contactor with 230V AC coil; acts as main disconnect controlled by voltage monitor |
+| **Main Circuit Breaker** | iC60N 1P+N C63 | Schneider Electric | Acti9 iC60N | 63A main breaker; provides overcurrent and short circuit protection (choose C40/C50/C63 based on load) |
+| **Main RCD** | iID 2P 63A 300mA Type AC | Schneider Electric | Acti9 iID | 300mA time-delayed RCD; fire protection for entire installation; detects ground faults |
+| **Surge Protection** | iPRD 8r 1P+N | Schneider Electric | Acti9 iPRD | Type 2 surge protector; protects against lightning and voltage spikes up to 8kA |
+| **Individual RCBOs** | iDPN Vigi Type A 30mA | Schneider Electric | Acti9 iDPN Vigi | 17× individual circuit breakers with 30mA earth leakage protection; C10/C16/C25 ratings |
+
 <table>
 <tr>
 <td width="50%" align="center">
