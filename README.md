@@ -21,10 +21,12 @@ This electrical panel design provides:
 |-----------|-------------|-------|-------|-------------|
 | **Voltage Monitor** | E1YM400VS10 | TELE | E1YM | Monitors incoming voltage (160-280V range); triggers contactor during under/overvoltage conditions |
 | **Main Contactor** | LC1D40A | Schneider Electric | TeSys D | 40A contactor with 230V AC coil; acts as main disconnect controlled by voltage monitor |
-| **Main Circuit Breaker** | iC60N 1P+N C63 | Schneider Electric | Acti9 iC60N | 63A main breaker; provides overcurrent and short circuit protection (choose C40/C50/C63 based on load) |
-| **Main RCD** | iID 2P 63A 300mA Type AC | Schneider Electric | Acti9 iID | 300mA time-delayed RCD; fire protection for entire installation; detects ground faults |
-| **Surge Protection** | iPRD 8r 1P+N | Schneider Electric | Acti9 iPRD | Type 2 surge protector; protects against lightning and voltage spikes up to 8kA |
-| **Individual RCBOs** | iDPN Vigi Type A 30mA | Schneider Electric | Acti9 iDPN Vigi | 17× individual circuit breakers with 30mA earth leakage protection; C10/C16/C25 ratings |
+| **Main Circuit Breaker** | A9F74163 | Schneider Electric | Acti9 iC60N | 1P+N 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
+| **Main RCD** | A9R44263 | Schneider Electric | Acti9 iID | 2P 63A 300mA Type AC; time-delayed RCD for fire protection; detects ground faults |
+| **Surge Protection** | A9L08501 | Schneider Electric | Acti9 iPRD 8r | 1P+N 8kA 350V Type 2 surge protector; protects against lightning and voltage spikes with remote signaling |
+| **RCBOs - C10** | A9D32610 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 10A C-curve Type A 30mA; for refrigerators (1× unit) |
+| **RCBOs - C16** | A9D32616 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 16A C-curve Type A 30mA; for rooms, bathrooms, ACs, laundry (15× units) |
+| **RCBOs - C25** | A9D32625 | Schneider Electric | Acti9 iDPN N Vigi | 1P+N 25A C-curve Type A 30mA; for electric oven (1× unit) |
 
 <table>
 <tr>
