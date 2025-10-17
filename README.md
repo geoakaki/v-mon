@@ -2,7 +2,7 @@
 
 **English** | [**Read in Georgian (ქართულად)**](README.ge.md)
 
-A complete guide for building a modern, safe electrical distribution panel for a residential property with 16 individual circuits. This design uses high-quality Hager components with individual RCBO protection for each circuit.
+A complete guide for building a modern, safe electrical distribution panel for a residential property with 15 individual circuits. This design uses high-quality Hager components with individual RCBO protection for each circuit.
 
 ## What is This System?
 
@@ -20,12 +20,11 @@ This electrical panel design provides:
 | Component | Part Number | Brand | Model | Description |
 |-----------|-------------|-------|-------|-------------|
 | **Voltage Monitor** | E1YM400VS10 | TELE | E1YM | Monitors incoming voltage (160-280V range); triggers contactor during under/overvoltage conditions |
-| **Main Contactor** | LC1D40A | Schneider Electric | TeSys D | 40A contactor with 230V AC coil; acts as main disconnect controlled by voltage monitor |
+| **Main Contactor** | ESC263 | Hager | ESC | 2P 63A contactor with 230V AC coil; 2 NO contacts; acts as main disconnect controlled by voltage monitor |
 | **Main Circuit Breaker** | MCN163 | Hager | MCN | 1P 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
 | **Main RCD** | CFC263U | Hager | CFC | 2P 63A 300mA Type AC; time-delayed RCD for fire protection; detects ground faults |
 | **Surge Protection** | SPL220 | Hager | SPL | 1P+N 20kA Type 2 surge protector; protects against lightning and voltage spikes |
-| **RCBOs - C10** | ADC910R | Hager | ADC | 1P+N 10A C-curve Type A 30mA 6kA; for refrigerators (1× unit) |
-| **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, ACs, laundry (11× units) |
+| **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, ACs, laundry, refrigerators (12× units) |
 | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder (2× units) |
 | **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger (1× unit) |
 
@@ -43,11 +42,11 @@ Triggers contactor if voltage problems
 </td>
 <td width="50%" align="center">
 
-**Contactor**<br/>Schneider LC1D40A
+**Contactor**<br/>Hager ESC263
 
 <img src="imgs/contactor-lc1d40a.jpg" width="200"/>
 
-Main ON/OFF switch<br/>
+Main ON/OFF switch 63A<br/>
 Controlled by voltage monitor
 
 </td>
@@ -91,8 +90,8 @@ Saves appliances during storms
 
 <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/>
 
-16× individual protection circuits<br/>
-C10/C16/C25/C32, 30mA per circuit
+15× individual protection circuits<br/>
+C16/C25/C32, 30mA per circuit
 
 </td>
 </tr>
@@ -121,7 +120,7 @@ Each circuit gets its own RCBO that provides:
 - Better safety than shared protection
 - Easier troubleshooting (you know exactly which circuit failed)
 
-## All 16 Circuits - What Gets Protected
+## All 15 Circuits - What Gets Protected
 
 Every circuit uses **Hager ADC** RCBOs with these specifications:
 - **Type A** - suitable for modern electronics, computers, LED lights
@@ -156,7 +155,7 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 ### 11-13: Kitchen Appliances
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 11 | Refrigerators (main + wine fridge) | C10 | 2,300W | Smaller breaker = less nuisance tripping |
+| 11 | Refrigerators (main + wine fridge) | C16 | 3,680W | Standard protection for refrigerators |
 | 12 | Electric oven | C25 | 5,750W | Heavy-duty circuit for high power |
 | 13 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
 
@@ -177,23 +176,22 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 | Qty | Part Number | Description | Approx. Price Range |
 |-----|-------------|-------------|---------------------|
 | 1 | TELE E1YM400VS10 | Voltage monitor relay | ₾200-300 (€80-120) |
-| 1 | Schneider LC1D40A | Contactor 40A + coil (230V AC) | ₾100-150 (€40-60) |
+| 1 | Hager ESC263 | Contactor 63A 2NO + coil (230V AC) | ₾120-180 (€50-70) |
 | 1 | Hager MCN163 | Main breaker 1P C63 6kA | ₾70-100 (€30-40) |
 | 1 | Hager CFC263U | Main RCD 2P 63A 300mA Type AC | ₾180-250 (€70-100) |
 | 1 | Hager SPL220 | Surge protection device Type 2 1P+N 20kA | ₾120-200 (€50-80) |
 
-### Individual Circuit Protection (16 RCBOs)
+### Individual Circuit Protection (15 RCBOs)
 | Qty | Part Number | For Which Circuits | Approx. Price Each |
 |-----|-------------|--------------------|--------------------|
-| 11 | Hager ADC916R | Rooms, bathrooms, ACs, dishwasher, laundry (C16 Type A 30mA) | ₾100-140 (€40-55) |
-| 1 | Hager ADC910R | Refrigerators only (C10 Type A 30mA) | ₾100-140 (€40-55) |
+| 12 | Hager ADC916R | Rooms, bathrooms, ACs, dishwasher, laundry, refrigerators (C16 Type A 30mA) | ₾100-140 (€40-55) |
 | 2 | Hager ADC925R | Electric oven, welder (C25 Type A 30mA) | ₾100-140 (€40-55) |
 | 1 | Hager ADC932R | EV charger only (C32 Type A 30mA) | ₾100-140 (€40-55) |
 
 ### Additional Materials Needed
-- Distribution board enclosure (min. 28 modules wide)
+- Distribution board enclosure (min. 26 modules wide)
 - Busbar (single-phase + neutral)
-- Wire: 1.5mm² for C10, 2.5mm² for C16, 4mm² for C25, 6mm² for C32
+- Wire: 2.5mm² for C16, 4mm² for C25, 6mm² for C32
 - Circuit labels and marker
 - Din rail clips and cable ties
 
@@ -217,13 +215,13 @@ Follow this order exactly:
 3. Install contactor after RCD
 4. Wire voltage monitor to contactor coil
 5. Install surge protector on separate branch
-6. Install all 17 RCBOs in a row
+6. Install all 15 RCBOs in a row
 7. Connect busbar to distribute power to all RCBOs
 
 ### 3. Wiring Standards
 - Use **2.5mm²** copper wire for C16 RCBOs (16A circuits)
-- Use **1.5mm²** copper wire for C10 RCBO (refrigerator circuit)
-- Use **4mm²** copper wire for C25 RCBO (oven circuit)
+- Use **4mm²** copper wire for C25 RCBOs (25A circuits)
+- Use **6mm²** copper wire for C32 RCBO (32A EV charger circuit)
 - All connections must be tight (use torque screwdriver: 2-2.5 Nm)
 
 ### 4. Testing Procedure
@@ -277,11 +275,11 @@ If you have modern inverter-based appliances:
 - C25 RCBO provides adequate protection
 - Dedicated circuit prevents voltage drops during welding
 
-### Why Refrigerators Get C10 Instead of C16
-- Refrigerator compressors cause small current surges
-- C10 breaker is "closer" to normal operating current
-- Better discrimination = less false tripping
-- Still safe (refrigerators typically draw 1-3A)
+### Why Refrigerators Use C16
+- Refrigerators typically draw 1-3A during normal operation
+- C16 provides adequate protection without nuisance tripping
+- Handles compressor startup surges reliably
+- Standard rating simplifies component inventory
 
 ---
 
