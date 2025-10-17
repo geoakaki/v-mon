@@ -22,7 +22,7 @@ This electrical panel design provides:
 | 1× | **Voltage Monitor** | E1YM400VS10 | TELE | E1YM | Monitors incoming voltage (160-280V range); triggers contactor during under/overvoltage conditions |
 | 1× | **Main Contactor** | ESC263 | Hager | ESC | 2P 63A contactor with 230V AC coil; 2 NO contacts; acts as main disconnect controlled by voltage monitor |
 | 1× | **Main Circuit Breaker** | MCN163 | Hager | MCN | 1P 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
-| 1× | **Surge Protection** | SPL220 | Hager | SPL | 1P+N 20kA Type 2 surge protector; protects against lightning and voltage spikes |
+| 1× | **Surge Protection** | SPA911 | Hager | SPA | 2P 25kA Type 1+2 surge arrester; protects against lightning and voltage spikes |
 | 12× | **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, ACs, laundry, refrigerators |
 | 2× | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder |
 | 1× | **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger |
@@ -32,7 +32,7 @@ This electrical panel design provides:
 | **Voltage Monitor**<br/>TELE E1YM400VS10 | <img src="imgs/voltage-monitor-tele.jpg" width="200"/> | Watches incoming voltage (160-280V range)<br/>Triggers contactor if voltage problems occur |
 | **Main Contactor**<br/>Hager ESC263 | <img src="imgs/contactor-lc1d40a.jpg" width="200"/> | Main ON/OFF switch 63A 2NO<br/>Controlled by voltage monitor |
 | **Main Circuit Breaker**<br/>Hager MCN163 | <img src="imgs/breaker-ic60n.jpg" width="200"/> | Overcurrent & short circuit protection<br/>C63 6kA breaking capacity |
-| **Surge Protector**<br/>Hager SPL220 | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | Lightning & voltage spike protection<br/>Type 2, 20kA, saves appliances during storms |
+| **Surge Protector**<br/>Hager SPA911 | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | Lightning & voltage spike protection<br/>Type 1+2, 25kA, combined protection |
 | **RCBO (Individual Circuits)**<br/>Hager ADC916R/925R/932R | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | 15× individual protection circuits<br/>C16/C25/C32, Type A, 30mA per circuit |
 
 ### How Everything Connects
@@ -116,7 +116,7 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 | 1 | TELE E1YM400VS10 | Voltage monitor relay | ₾200-300 (€80-120) |
 | 1 | Hager ESC263 | Contactor 63A 2NO + coil (230V AC) | ₾120-180 (€50-70) |
 | 1 | Hager MCN163 | Main breaker 1P C63 6kA | ₾70-100 (€30-40) |
-| 1 | Hager SPL220 | Surge protection device Type 2 1P+N 20kA | ₾120-200 (€50-80) |
+| 1 | Hager SPA911 | Surge protection device Type 1+2 2P 25kA | ₾150-250 (€60-100) |
 
 ### Individual Circuit Protection (15 RCBOs)
 | Qty | Part Number | For Which Circuits | Approx. Price Each |
@@ -134,7 +134,7 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 
 **Note:** No main RCD required - all circuits protected by individual 30mA RCBOs
 
-**Estimated Total Cost: ₾2,600 - ₾4,000 (€1,050 - €1,600)** (parts only, excluding labor)
+**Estimated Total Cost: ₾2,650 - ₾4,050 (€1,070 - €1,620)** (parts only, excluding labor)
 
 ## Critical Installation Instructions
 
