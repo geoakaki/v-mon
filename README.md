@@ -27,62 +27,13 @@ This electrical panel design provides:
 | 2× | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder |
 | 1× | **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger |
 
-<table>
-<tr>
-<td width="50%" align="center">
-
-**Voltage Monitor**<br/>TELE E1YM400VS10
-
-<img src="imgs/voltage-monitor-tele.jpg" width="200"/>
-
-Watches incoming voltage<br/>
-Triggers contactor if voltage problems
-
-</td>
-<td width="50%" align="center">
-
-**Contactor**<br/>Hager ESC263
-
-<img src="imgs/contactor-lc1d40a.jpg" width="200"/>
-
-Main ON/OFF switch 63A<br/>
-Controlled by voltage monitor
-
-</td>
-</tr>
-<tr>
-<td width="50%" align="center">
-
-**Main Circuit Breaker**<br/>Hager MCN 1P
-
-<img src="imgs/breaker-ic60n.jpg" width="200"/>
-
-Overcurrent & short circuit protection<br/>
-C63 6kA
-
-</td>
-<td width="50%" align="center">
-
-**Surge Protector**<br/>Hager SPL 1P+N Type 2
-
-<img src="imgs/rcbo-idpn-vigi.jpg" width="200"/>
-
-Lightning & voltage spike protection<br/>
-Saves appliances during storms
-
-</td>
-<td width="50%" align="center">
-
-**RCBO (Individual Circuits)**<br/>Hager ADC Type A
-
-<img src="imgs/rcbo-idpn-vigi.jpg" width="200"/>
-
-15× individual protection circuits<br/>
-C16/C25/C32, 30mA per circuit
-
-</td>
-</tr>
-</table>
+| Component | Image | Description |
+|-----------|-------|-------------|
+| **Voltage Monitor**<br/>TELE E1YM400VS10 | <img src="imgs/voltage-monitor-tele.jpg" width="200"/> | Watches incoming voltage (160-280V range)<br/>Triggers contactor if voltage problems occur |
+| **Main Contactor**<br/>Hager ESC263 | <img src="imgs/contactor-lc1d40a.jpg" width="200"/> | Main ON/OFF switch 63A 2NO<br/>Controlled by voltage monitor |
+| **Main Circuit Breaker**<br/>Hager MCN163 | <img src="imgs/breaker-ic60n.jpg" width="200"/> | Overcurrent & short circuit protection<br/>C63 6kA breaking capacity |
+| **Surge Protector**<br/>Hager SPL220 | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | Lightning & voltage spike protection<br/>Type 2, 20kA, saves appliances during storms |
+| **RCBO (Individual Circuits)**<br/>Hager ADC916R/925R/932R | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | 15× individual protection circuits<br/>C16/C25/C32, Type A, 30mA per circuit |
 
 ### How Everything Connects
 
