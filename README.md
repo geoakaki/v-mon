@@ -10,7 +10,7 @@ This electrical panel design provides:
 - **Individual protection** for every circuit (no shared protection)
 - **Automatic voltage monitoring** that disconnects power during voltage problems
 - **Lightning protection** to safeguard expensive appliances
-- **Fire protection** through ground fault detection
+- **Earth leakage protection** with 30mA RCBOs on every circuit
 - **Selective tripping** - only the faulty circuit disconnects, others stay on
 
 ## System Overview
@@ -22,7 +22,6 @@ This electrical panel design provides:
 | **Voltage Monitor** | E1YM400VS10 | TELE | E1YM | Monitors incoming voltage (160-280V range); triggers contactor during under/overvoltage conditions |
 | **Main Contactor** | ESC263 | Hager | ESC | 2P 63A contactor with 230V AC coil; 2 NO contacts; acts as main disconnect controlled by voltage monitor |
 | **Main Circuit Breaker** | MCN163 | Hager | MCN | 1P 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
-| **Main RCD** | CFC263U | Hager | CFC | 2P 63A 300mA Type AC; time-delayed RCD for fire protection; detects ground faults |
 | **Surge Protection** | SPL220 | Hager | SPL | 1P+N 20kA Type 2 surge protector; protects against lightning and voltage spikes |
 | **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, ACs, laundry, refrigerators (12× units) |
 | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder (2× units) |
@@ -62,18 +61,6 @@ Overcurrent & short circuit protection<br/>
 C63 6kA
 
 </td>
-<td width="50%" align="center">
-
-**Main RCD (Fire Protection)**<br/>Hager CFC 2P 63A/300mA
-
-<img src="imgs/rcd-iid.jpg" width="200"/>
-
-Detects ground faults<br/>
-Time-delayed, prevents fires
-
-</td>
-</tr>
-<tr>
 <td width="50%" align="center">
 
 **Surge Protector**<br/>Hager SPL 1P+N Type 2
@@ -172,13 +159,12 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 
 ## Shopping List - What to Buy
 
-### Main Control Components (5 items)
+### Main Control Components (4 items)
 | Qty | Part Number | Description | Approx. Price Range |
 |-----|-------------|-------------|---------------------|
 | 1 | TELE E1YM400VS10 | Voltage monitor relay | ₾200-300 (€80-120) |
 | 1 | Hager ESC263 | Contactor 63A 2NO + coil (230V AC) | ₾120-180 (€50-70) |
 | 1 | Hager MCN163 | Main breaker 1P C63 6kA | ₾70-100 (€30-40) |
-| 1 | Hager CFC263U | Main RCD 2P 63A 300mA Type AC | ₾180-250 (€70-100) |
 | 1 | Hager SPL220 | Surge protection device Type 2 1P+N 20kA | ₾120-200 (€50-80) |
 
 ### Individual Circuit Protection (15 RCBOs)
@@ -189,13 +175,15 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 | 1 | Hager ADC932R | EV charger only (C32 Type A 30mA) | ₾100-140 (€40-55) |
 
 ### Additional Materials Needed
-- Distribution board enclosure (min. 26 modules wide)
+- Distribution board enclosure (min. 24 modules wide)
 - Busbar (single-phase + neutral)
 - Wire: 2.5mm² for C16, 4mm² for C25, 6mm² for C32
 - Circuit labels and marker
 - Din rail clips and cable ties
 
-**Estimated Total Cost: ₾2,800 - ₾4,200 (€1,100 - €1,700)** (parts only, excluding labor)
+**Note:** No main RCD required - all circuits protected by individual 30mA RCBOs
+
+**Estimated Total Cost: ₾2,600 - ₾4,000 (€1,050 - €1,600)** (parts only, excluding labor)
 
 ## Critical Installation Instructions
 
@@ -211,12 +199,11 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 ### 2. Proper Connection Sequence
 Follow this order exactly:
 1. Install main breaker first (grid connection)
-2. Connect main RCD after breaker
-3. Install contactor after RCD
-4. Wire voltage monitor to contactor coil
-5. Install surge protector on separate branch
-6. Install all 15 RCBOs in a row
-7. Connect busbar to distribute power to all RCBOs
+2. Install contactor after breaker
+3. Wire voltage monitor to contactor coil
+4. Install surge protector on separate branch
+5. Install all 15 RCBOs in a row
+6. Connect busbar to distribute power to all RCBOs
 
 ### 3. Wiring Standards
 - Use **2.5mm²** copper wire for C16 RCBOs (16A circuits)
@@ -227,10 +214,9 @@ Follow this order exactly:
 ### 4. Testing Procedure
 Before connecting any loads:
 1. Test main breaker operation (manual trip)
-2. Test main RCD test button (should trip at 300mA)
-3. Test each RCBO test button (should trip at 30mA)
-4. Verify voltage monitor triggers contactor
-5. Measure voltage at each RCBO output
+2. Test each RCBO test button (should trip at 30mA)
+3. Verify voltage monitor triggers contactor
+4. Measure voltage at each RCBO output
 
 ### 5. Labeling
 Print and attach labels to each RCBO:
