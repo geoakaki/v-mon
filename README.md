@@ -23,9 +23,9 @@ This electrical panel design provides:
 | 1× | **Main Contactor** | ESC263 | Hager | ESC | 2P 63A contactor with 230V AC coil; 2 NO contacts; acts as main disconnect controlled by voltage monitor |
 | 1× | **Main Circuit Breaker** | MCN163 | Hager | MCN | 1P 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
 | 1× | **Surge Protection** | SPA911 | Hager | SPA | 2P 25kA Type 1+2 surge arrester; protects against lightning and voltage spikes |
-| 10× | **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, AC, laundry, refrigerators |
-| 3× | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder, studio AC (50m²) |
-| 1× | **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger |
+| 9× | **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, AC, laundry, refrigerators, dishwasher |
+| 4× | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, electric stove/teapot/toaster, studio AC (50m²) |
+| 1× | **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger & MIG welder |
 
 | Component | Image | Description |
 |-----------|-------|-------------|
@@ -88,23 +88,23 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 | 7 | Room 1 AC unit | C16 | 3,680W | Handles startup surge for standard room |
 | 8 | Studio AC unit (50m²) | C25 | 5,750W | Large 2-2.5 ton unit for 50 square meter space |
 
-### 9-11: Kitchen Appliances
+### 9-12: Kitchen Appliances
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
 | 9 | Refrigerators (main + wine fridge) | C16 | 3,680W | Standard protection for refrigerators |
 | 10 | Electric oven | C25 | 5,750W | Heavy-duty circuit for high power |
-| 11 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
+| 11 | Electric stove, teapot, toaster oven | C25 | 5,750W | Combined circuit for cooking appliances |
+| 12 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
 
-### 12: Laundry Room
+### 13: Laundry Room
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 12 | Washing machine & Clothes dryer | C16 | 3,680W | Combined circuit for both appliances |
+| 13 | Washing machine & Clothes dryer | C16 | 3,680W | Combined circuit for both appliances |
 
-### 13-14: Heavy Equipment
+### 14: Heavy Equipment
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 13 | EV Charger (Level 2) | C32 | 7,360W | 32A dedicated circuit for electric vehicle charging |
-| 14 | MIG Welder (IPOTOOLS MIG 225SYN) | C25 | 5,750W | 225A welding machine, requires dedicated circuit |
+| 14 | EV Charger & MIG Welder | C32 | 7,360W | **WARNING:** Never run both simultaneously at full power |
 
 ## Shopping List - What to Buy
 
@@ -119,9 +119,9 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 ### Individual Circuit Protection (14 RCBOs)
 | Qty | Part Number | For Which Circuits | Approx. Price Each |
 |-----|-------------|--------------------|--------------------|
-| 10 | Hager ADC916R | Rooms, bathrooms, AC, dishwasher, laundry, refrigerators (C16 Type A 30mA) | ₾100-140 (€40-55) |
-| 3 | Hager ADC925R | Electric oven, welder, studio AC 50m² (C25 Type A 30mA) | ₾100-140 (€40-55) |
-| 1 | Hager ADC932R | EV charger only (C32 Type A 30mA) | ₾100-140 (€40-55) |
+| 9 | Hager ADC916R | Rooms, bathrooms, AC, dishwasher, laundry, refrigerators (C16 Type A 30mA) | ₾100-140 (€40-55) |
+| 4 | Hager ADC925R | Electric oven, electric stove/teapot/toaster, studio AC 50m² (C25 Type A 30mA) | ₾100-140 (€40-55) |
+| 1 | Hager ADC932R | EV charger & MIG welder (C32 Type A 30mA) | ₾100-140 (€40-55) |
 
 ### Additional Materials Needed
 - Distribution board enclosure (min. 22 modules wide)
@@ -180,20 +180,20 @@ Circuit 7: AC - Room 1
 Circuit 8: AC - Studio (50m² / 2-2.5 ton unit)
 Circuit 9: Refrigerators
 Circuit 10: Electric Oven
-Circuit 11: Dishwasher
-Circuit 12: Washing Machine & Dryer
-Circuit 13: EV Charger
-Circuit 14: MIG Welder
+Circuit 11: Electric Stove/Teapot/Toaster
+Circuit 12: Dishwasher
+Circuit 13: Washing Machine & Dryer
+Circuit 14: EV Charger & MIG Welder (Never both at full power)
 ```
 
 ## Advanced Options
 
 ### Upgrade to Type F RCBOs (Optional)
 If you have modern inverter-based appliances:
-- **Consider Type F** for circuits 7-8 (AC units), 12 (washing machine & dryer), 13 (EV charger), and 14 (inverter welder)
+- **Consider Type F** for circuits 7-8 (AC units), 13 (washing machine & dryer), and 14 (EV charger & inverter welder)
 - Type F RCBOs handle DC fault currents better from inverter-based equipment
 - Cost: ~€10-15 more per unit
-- **Highly recommended for EV charger and inverter welder circuits**
+- **Highly recommended for circuit 14 (EV charger and inverter welder)**
 
 ### Heavy Equipment Notes
 **Studio AC (Circuit 8):**
@@ -202,17 +202,14 @@ If you have modern inverter-based appliances:
 - C25 RCBO provides adequate protection with headroom
 - Use 4mm² copper wire for this circuit
 
-**EV Charger (Circuit 13):**
-- 32A dedicated circuit provides ~7.3kW charging (Level 2)
+**EV Charger & MIG Welder (Circuit 14):**
+- **CRITICAL WARNING:** Never operate both devices simultaneously at full power
+- EV Charger: 32A circuit provides ~7.3kW charging (Level 2)
+- MIG Welder (IPOTOOLS MIG 225SYN): 225A output, ~20A input at 230V, draws 4-5kW at maximum
+- Combined potential draw: 25-27A peak (exceeds 32A rating if both at full power)
 - Use 6mm² copper wire minimum
-- Consider upgrading to Type F RCBO for better protection
-- Never run EV charger and welder simultaneously at full power
-
-**MIG Welder (Circuit 14):**
-- IPOTOOLS MIG 225SYN: 225A output, ~20A input at 230V
-- Draws 4-5kW at maximum output
-- C25 RCBO provides adequate protection
-- Dedicated circuit prevents voltage drops during welding
+- **Strongly recommend Type F RCBO for this circuit**
+- Typical usage: charge EV overnight, weld during day (not simultaneously)
 
 ### Why Refrigerators Use C16
 - Refrigerators typically draw 1-3A during normal operation
