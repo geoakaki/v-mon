@@ -2,7 +2,7 @@
 
 **English** | [**Read in Georgian (ქართულად)**](README.ge.md)
 
-A complete guide for building a modern, safe electrical distribution panel for a residential property with 15 individual circuits. This design uses high-quality Hager components with individual RCBO protection for each circuit.
+A complete guide for building a modern, safe electrical distribution panel for a residential property with 13 individual circuits. This design uses high-quality Hager components with individual RCBO protection for each circuit.
 
 ## What is This System?
 
@@ -23,8 +23,8 @@ This electrical panel design provides:
 | 1× | **Main Contactor** | ESC263 | Hager | ESC | 2P 63A contactor with 230V AC coil; 2 NO contacts; acts as main disconnect controlled by voltage monitor |
 | 1× | **Main Circuit Breaker** | MCN163 | Hager | MCN | 1P 63A C-curve; provides overcurrent and short circuit protection (6kA breaking capacity) |
 | 1× | **Surge Protection** | SPA911 | Hager | SPA | 2P 25kA Type 1+2 surge arrester; protects against lightning and voltage spikes |
-| 12× | **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, ACs, laundry, refrigerators |
-| 2× | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder |
+| 10× | **RCBOs - C16** | ADC916R | Hager | ADC | 1P+N 16A C-curve Type A 30mA 6kA; for rooms, bathrooms, AC, laundry, refrigerators |
+| 3× | **RCBOs - C25** | ADC925R | Hager | ADC | 1P+N 25A C-curve Type A 30mA 6kA; for oven, welder, studio AC (50m²) |
 | 1× | **RCBOs - C32** | ADC932R | Hager | ADC | 1P+N 32A C-curve Type A 30mA 6kA; for EV charger |
 
 | Component | Image | Description |
@@ -33,7 +33,7 @@ This electrical panel design provides:
 | **Main Contactor**<br/>Hager ESC263 | <img src="imgs/contactor-lc1d40a.jpg" width="200"/> | Main ON/OFF switch 63A 2NO<br/>Controlled by voltage monitor |
 | **Main Circuit Breaker**<br/>Hager MCN163 | <img src="imgs/breaker-ic60n.jpg" width="200"/> | Overcurrent & short circuit protection<br/>C63 6kA breaking capacity |
 | **Surge Protector**<br/>Hager SPA911 | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | Lightning & voltage spike protection<br/>Type 1+2, 25kA, combined protection |
-| **RCBO (Individual Circuits)**<br/>Hager ADC916R/925R/932R | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | 15× individual protection circuits<br/>C16/C25/C32, Type A, 30mA per circuit |
+| **RCBO (Individual Circuits)**<br/>Hager ADC916R/925R/932R | <img src="imgs/rcbo-idpn-vigi.jpg" width="200"/> | 14× individual protection circuits<br/>C16/C25/C32, Type A, 30mA per circuit |
 
 ### How Everything Connects
 
@@ -58,7 +58,7 @@ Each circuit gets its own RCBO that provides:
 - Better safety than shared protection
 - Easier troubleshooting (you know exactly which circuit failed)
 
-## All 15 Circuits - What Gets Protected
+## All 13 Circuits - What Gets Protected
 
 Every circuit uses **Hager ADC** RCBOs with these specifications:
 - **Type A** - suitable for modern electronics, computers, LED lights
@@ -82,31 +82,29 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 | 5 | Bathroom 1 - lights, outlets, fan | C16 | 3,680W | Hair dryer, electric razor, etc. |
 | 6 | Bathroom 2 - lights, outlets, fan | C16 | 3,680W | Same as above |
 
-### 7-10: Air Conditioning (One AC Per Room)
+### 7-8: Air Conditioning
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 7 | Room 1 AC unit | C16 | 3,680W | Handles startup surge |
-| 8 | Room 2 AC unit | C16 | 3,680W | Separate circuit = no interference |
-| 9 | Room 3 AC unit | C16 | 3,680W | Each AC isolated for reliability |
-| 10 | Studio AC unit | C16 | 3,680W | Studio stays cool independently |
+| 7 | Room 1 AC unit | C16 | 3,680W | Handles startup surge for standard room |
+| 8 | Studio AC unit (50m²) | C25 | 5,750W | Large 2-2.5 ton unit for 50 square meter space |
 
-### 11-13: Kitchen Appliances
+### 9-11: Kitchen Appliances
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 11 | Refrigerators (main + wine fridge) | C16 | 3,680W | Standard protection for refrigerators |
-| 12 | Electric oven | C25 | 5,750W | Heavy-duty circuit for high power |
-| 13 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
+| 9 | Refrigerators (main + wine fridge) | C16 | 3,680W | Standard protection for refrigerators |
+| 10 | Electric oven | C25 | 5,750W | Heavy-duty circuit for high power |
+| 11 | Dishwasher | C16 | 3,680W | Heating element draws significant current |
 
-### 14: Laundry Room
+### 12: Laundry Room
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 14 | Washing machine & Clothes dryer | C16 | 3,680W | Combined circuit for both appliances |
+| 12 | Washing machine & Clothes dryer | C16 | 3,680W | Combined circuit for both appliances |
 
-### 15-16: Heavy Equipment
+### 13-14: Heavy Equipment
 | # | What It Powers | RCBO | Max Load | Notes |
 |---|----------------|------|----------|-------|
-| 15 | EV Charger (Level 2) | C32 | 7,360W | 32A dedicated circuit for electric vehicle charging |
-| 16 | MIG Welder (IPOTOOLS MIG 225SYN) | C25 | 5,750W | 225A welding machine, requires dedicated circuit |
+| 13 | EV Charger (Level 2) | C32 | 7,360W | 32A dedicated circuit for electric vehicle charging |
+| 14 | MIG Welder (IPOTOOLS MIG 225SYN) | C25 | 5,750W | 225A welding machine, requires dedicated circuit |
 
 ## Shopping List - What to Buy
 
@@ -118,15 +116,15 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 | 1 | Hager MCN163 | Main breaker 1P C63 6kA | ₾70-100 (€30-40) |
 | 1 | Hager SPA911 | Surge protection device Type 1+2 2P 25kA | ₾150-250 (€60-100) |
 
-### Individual Circuit Protection (15 RCBOs)
+### Individual Circuit Protection (14 RCBOs)
 | Qty | Part Number | For Which Circuits | Approx. Price Each |
 |-----|-------------|--------------------|--------------------|
-| 12 | Hager ADC916R | Rooms, bathrooms, ACs, dishwasher, laundry, refrigerators (C16 Type A 30mA) | ₾100-140 (€40-55) |
-| 2 | Hager ADC925R | Electric oven, welder (C25 Type A 30mA) | ₾100-140 (€40-55) |
+| 10 | Hager ADC916R | Rooms, bathrooms, AC, dishwasher, laundry, refrigerators (C16 Type A 30mA) | ₾100-140 (€40-55) |
+| 3 | Hager ADC925R | Electric oven, welder, studio AC 50m² (C25 Type A 30mA) | ₾100-140 (€40-55) |
 | 1 | Hager ADC932R | EV charger only (C32 Type A 30mA) | ₾100-140 (€40-55) |
 
 ### Additional Materials Needed
-- Distribution board enclosure (min. 24 modules wide)
+- Distribution board enclosure (min. 22 modules wide)
 - Busbar (single-phase + neutral)
 - Wire: 2.5mm² for C16, 4mm² for C25, 6mm² for C32
 - Circuit labels and marker
@@ -134,7 +132,7 @@ Every circuit uses **Hager ADC** RCBOs with these specifications:
 
 **Note:** No main RCD required - all circuits protected by individual 30mA RCBOs
 
-**Estimated Total Cost: ₾2,650 - ₾4,050 (€1,070 - €1,620)** (parts only, excluding labor)
+**Estimated Total Cost: ₾2,550 - ₾3,900 (€1,030 - €1,560)** (parts only, excluding labor)
 
 ## Critical Installation Instructions
 
@@ -153,7 +151,7 @@ Follow this order exactly:
 2. Install contactor after breaker
 3. Wire voltage monitor to contactor coil
 4. Install surge protector on separate branch
-5. Install all 15 RCBOs in a row
+5. Install all 14 RCBOs in a row
 6. Connect busbar to distribute power to all RCBOs
 
 ### 3. Wiring Standards
@@ -179,34 +177,38 @@ Circuit 4: Studio Outlets/Lights
 Circuit 5: Bathroom 1
 Circuit 6: Bathroom 2
 Circuit 7: AC - Room 1
-Circuit 8: AC - Room 2
-Circuit 9: AC - Room 3
-Circuit 10: AC - Studio
-Circuit 11: Refrigerators
-Circuit 12: Electric Oven
-Circuit 13: Dishwasher
-Circuit 14: Washing Machine & Dryer
-Circuit 15: EV Charger
-Circuit 16: MIG Welder
+Circuit 8: AC - Studio (50m² / 2-2.5 ton unit)
+Circuit 9: Refrigerators
+Circuit 10: Electric Oven
+Circuit 11: Dishwasher
+Circuit 12: Washing Machine & Dryer
+Circuit 13: EV Charger
+Circuit 14: MIG Welder
 ```
 
 ## Advanced Options
 
 ### Upgrade to Type F RCBOs (Optional)
 If you have modern inverter-based appliances:
-- **Consider Type F** for circuits 7-10 (AC units), 14 (washing machine & dryer), 15 (EV charger), and 16 (inverter welder)
+- **Consider Type F** for circuits 7-8 (AC units), 12 (washing machine & dryer), 13 (EV charger), and 14 (inverter welder)
 - Type F RCBOs handle DC fault currents better from inverter-based equipment
 - Cost: ~€10-15 more per unit
 - **Highly recommended for EV charger and inverter welder circuits**
 
 ### Heavy Equipment Notes
-**EV Charger (Circuit 15):**
+**Studio AC (Circuit 8):**
+- 50 square meter studio requires 2-2.5 ton AC unit (18,000-24,000 BTU)
+- Typical draw: 16-20A at 230V (~4,000-5,000W)
+- C25 RCBO provides adequate protection with headroom
+- Use 4mm² copper wire for this circuit
+
+**EV Charger (Circuit 13):**
 - 32A dedicated circuit provides ~7.3kW charging (Level 2)
 - Use 6mm² copper wire minimum
 - Consider upgrading to Type F RCBO for better protection
 - Never run EV charger and welder simultaneously at full power
 
-**MIG Welder (Circuit 16):**
+**MIG Welder (Circuit 14):**
 - IPOTOOLS MIG 225SYN: 225A output, ~20A input at 230V
 - Draws 4-5kW at maximum output
 - C25 RCBO provides adequate protection
